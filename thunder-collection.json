@@ -1,0 +1,143 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "CraveBite Restaurant Backend API",
+  "collectionId": "cravebite-restaurant-backend-api",
+  "dateExported": "2026-10-01",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "auth-folder",
+      "name": "1. Authentication",
+      "containerId": ""
+    },
+    {
+      "_id": "users-folder",
+      "name": "2. Users Profile",
+      "containerId": ""
+    },
+    {
+      "_id": "restaurants-folder",
+      "name": "3. Restaurants",
+      "containerId": ""
+    },
+    {
+      "_id": "categories-folder",
+      "name": "4. Categories",
+      "containerId": ""
+    },
+    {
+      "_id": "menu-folder",
+      "name": "5. Menu Items",
+      "containerId": ""
+    },
+    {
+      "_id": "cart-folder",
+      "name": "6. Cart System",
+      "containerId": ""
+    },
+    {
+      "_id": "orders-folder",
+      "name": "7. Orders",
+      "containerId": ""
+    },
+    {
+      "_id": "admin-folder",
+      "name": "8. Super Admin",
+      "containerId": ""
+    }
+  ],
+  "requests": [
+    {
+      "_id": "req-auth-register",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "auth-folder",
+      "name": "Register Customer",
+      "url": "http://localhost:5000/api/auth/register",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"Customer@123\",\n  \"phone\": \"+923004444444\"\n}"
+      }
+    },
+    {
+      "_id": "req-auth-login-cust",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "auth-folder",
+      "name": "Login Customer",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"Customer@123\"\n}"
+      }
+    },
+    {
+      "_id": "req-auth-login-admin",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "auth-folder",
+      "name": "Login Restaurant Admin",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"admin1@cravebite.com\",\n  \"password\": \"Admin@123\"\n}"
+      }
+    },
+    {
+      "_id": "req-auth-login-superadmin",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "auth-folder",
+      "name": "Login Super Admin",
+      "url": "http://localhost:5000/api/auth/login",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"superadmin@cravebite.com\",\n  \"password\": \"Admin@123\"\n}"
+      }
+    },
+    {
+      "_id": "req-users-me",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "users-folder",
+      "name": "Get Current User Profile",
+      "url": "http://localhost:5000/api/users/me",
+      "method": "GET"
+    },
+    {
+      "_id": "req-rest-list",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "restaurants-folder",
+      "name": "List Restaurants (Search & Filter)",
+      "url": "http://localhost:5000/api/restaurants?page=1&limit=10&city=Karachi&search=Gourmet",
+      "method": "GET"
+    },
+    {
+      "_id": "req-cart-get",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "cart-folder",
+      "name": "Get Cart",
+      "url": "http://localhost:5000/api/cart",
+      "method": "GET"
+    },
+    {
+      "_id": "req-orders-place",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "orders-folder",
+      "name": "Place Order",
+      "url": "http://localhost:5000/api/orders",
+      "method": "POST",
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"deliveryAddress\": {\n    \"address\": \"House 123, Main Street\",\n    \"city\": \"Karachi\",\n    \"postalCode\": \"75000\"\n  },\n  \"phone\": \"+923001234567\",\n  \"paymentMethod\": \"cash\",\n  \"notes\": \"Please call when arriving\"\n}"
+      }
+    },
+    {
+      "_id": "req-admin-dashboard",
+      "colId": "cravebite-restaurant-backend-api",
+      "containerId": "admin-folder",
+      "name": "Get Dashboard Statistics",
+      "url": "http://localhost:5000/api/admin/dashboard",
+      "method": "GET"
+    }
+  ]
+}
